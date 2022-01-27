@@ -3,6 +3,7 @@ package main;
 import java.io.IOException;
 import java.io.PipedReader;
 import java.io.PipedWriter;
+import java.util.Calendar;
 
 import domain.Detector16S;
 import domain.Fisher;
@@ -18,6 +19,7 @@ public class Pesa {
 			{"ACAUATACAGAT","Turicibacter"},{"CAUATACAGATA","Rhodobacter"}};
 	
 	public static void main(String[] args) {
+		System.out.println("Salvador Candel Carrillo "+ Calendar.getInstance().toString()+"\n");
 		Sincroniza sincro = new Sincroniza(maxDetectores);
 		Fisher[] tests = new Fisher [maxDetectores];
 		Detector16S [] analisis = new Detector16S [maxDetectores];
@@ -39,6 +41,7 @@ public class Pesa {
 		System.out.println("Iniciando el proceso de Secuenciación Masiva");
 		sincro.esperaDetectoresFin();
 		System.out.println(generarInforme());
+		System.out.println("\nSalvador Candel Carrillo "+ Calendar.getInstance().toString());
 	}
 	
 	private static String generarInforme() {
